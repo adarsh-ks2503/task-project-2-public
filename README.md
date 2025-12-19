@@ -1,90 +1,38 @@
-# Simple HR Email Response Tool
+to setup the application 
+first run 'composer install' command and then 'php artisan serve' (need local serve rlike xampp apache) this will host the local server
 
-### Task Title
-Build a Simple HR Candidate Email Response Tool
+for setting up smtp configuration
+Step 1: Prepare Your Gmail Account
+        Enable 2-Step Verification (2FA):
 
-### Task Description
-Create a simple web application that helps HR send email responses to job candidates. The application should allow users to input candidate details, select their status (Selected/Rejected), and send appropriate email responses using predefined templates.
+        Go to Google Account → Security → 2-Step Verification
 
-### Technical Requirements
-- Frontend: HTML, CSS, and JavaScript
-- Backend: Any language of choice (PHP, Python, Node.js, etc.)
-- Simple form handling
-- Email sending functionality
-- No database required (use predefined templates in code)
+step 2        
+Create an App Password:
 
-### Steps to Complete
+after enabling 2 step verification
+go to app paswords section
+then give the name to your application and then generate password(it will give a 16 letter passowrd copy it)
+then configure the .env mail setup
 
-1. **Create the Form Interface**
-   - Create a simple form with:
-     - Radio buttons for status (Selected/Rejected)
-     - Input field for candidate name
-     - Input field for candidate email
-     - Input field for position applied
-   - Add basic form validation
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your_mail@gmail.com
+MAIL_PASSWORD=passoword you coipied
+MAIL_FROM_ADDRESS=your_email@gmail.com
+MAIL_FROM_NAME="HR Team"
 
-2. **Set Up Email Templates**
-   - Create two simple email templates in your code:
-     - Selection email template
-     - Rejection email template
-   - Templates should include placeholders for candidate name and position
+and then you're all done with smtp setup and ready to send mails perfectly via this application.
 
-3. **Implement Email Functionality**
-   - Set up email sending functionality using your chosen backend language
-   - Replace template placeholders with form data
-   - Add a preview before sending
-   - Implement the send functionality
+for your ease I'm also sharing the smtp setup i created to test the functionality of this app
 
-4. **Add Basic Styling**
-   - Make the form look clean and professional
-   - Add success/error messages
-   - Make it mobile-responsive
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=adarshkumarsingh109@gmail.com
+MAIL_PASSWORD=czfbgxginjmtwooi
+MAIL_FROM_ADDRESS=adarshkumarsingh109@gmail.com
+MAIL_FROM_NAME="HR Team"
 
-### Example Templates
-
-**Selection Template:**
-```
-Dear [Candidate Name],
-
-We are pleased to inform you that you have been selected for the position of [Position].
-
-Please reply to this email to confirm your acceptance.
-
-Best regards,
-HR Team
-```
-
-**Rejection Template:**
-```
-Dear [Candidate Name],
-
-Thank you for applying for the position of [Position].
-
-We regret to inform you that we have decided to move forward with other candidates.
-
-Best regards,
-HR Team
-```
-
-### Notes
-- Keep the code simple and well-organized
-- Focus on making the tool functional rather than fancy
-- Use proper error handling for email sending
-- Test the email functionality thoroughly
-- Comment your code appropriately
-
-### Submission Requirements
-- Source code uploaded to GitHub
-- README file with:
-  - Setup instructions
-  - How to configure email settings
-  - How to run the application
-
-### Time Estimate
-- Estimated completion time: 2-3 hours
-
-### Technical Tips
-- Use a simple email library/function in your chosen language
-- Store email templates as constants/variables
-- Keep styling simple but professional
-- Test with different email providers
+you can use this credential directly to check the email.
